@@ -1,0 +1,78 @@
+/*
+#**** BEGIN LICENSE BLOCK *****
+# Version: MPL 1.1/GPL 2.0/LGPL 2.1
+# 
+# The contents of this file are subject to the Mozilla Public License
+# Version 1.1 (the "License"); you may not use this file except in
+# compliance with the License. You may obtain a copy of the License at
+# http://www.mozilla.org/MPL/
+# 
+# Software distributed under the License is distributed on an "AS IS"
+# basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+# License for the specific language governing rights and limitations
+# under the License.
+# 
+# The Original Code is MozGnowser code.
+# 
+# The Initial Developer of the Original Code is Jayakrishnan B Nair
+# Portions created by the Initial Developer are Copyright (C) 2009-2010.
+# All Rights Reserved.
+# 
+# Contributor(s):
+#   Jayakrishnan B Nair <jayakrishnan.bk.nair@gmail.com>
+#   Sai Srivatsan R Iyengar
+#   Ridima Borkar
+#   Foram Dalal
+# 
+# Alternatively, the contents of this file may be used under the terms of
+# either the GNU General Public License Version 2 or later (the "GPL"), or
+# the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+# in which case the provisions of the GPL or the LGPL are applicable instead
+# of those above. If you wish to allow use of your version of this file only
+# under the terms of either the GPL or the LGPL, and not to allow others to
+# use your version of this file under the terms of the MPL, indicate your
+# decision by deleting the provisions above and replace them with the notice
+# and other provisions required by the GPL or the LGPL. If you do not delete
+# the provisions above, a recipient may use your version of this file under
+# the terms of any one of the MPL, the GPL or the LGPL.
+# 
+#**** END LICENSE BLOCK *****
+*/
+
+#include "nsISupports.idl"
+
+[scriptable, uuid(c4527cab-1c64-4740-a65a-d00ef4532f2e)]
+interface GnowMoz:nsISupports {
+
+  attribute string usrpass;
+  attribute string url; 
+  attribute string result;
+  attribute string rendered_nbh;
+  attribute string proxyenabled;
+  attribute string proxyurl;
+  attribute string proxyuser;
+  attribute string proxypass;
+  
+  
+    
+  void login();
+  void gnowqlSearch(in string search_val,in string search_type);
+  void gnowqlPossibleSearch(in string search_val);
+  void getsvg(in string ssid);
+  void getnbh(in string ssid);
+  void searchnid(in string ssid);
+  void getrel();
+  void getattribute();
+  void getdep();
+  void addTriple(in string subject,in string pred,in string predicate,in string object0);
+  void searchOptions(in string object0);
+  void GnowQLshell(in string fname);
+};
+
+[scriptable, uuid(cbd389a4-b7c6-4e45-a937-e086fc3fa4c2)]
+interface JSGnowMoz:nsISupports 
+{
+  string hello();
+  void initialise(in nsISupports link);
+  void debug( in string msg);
+};
