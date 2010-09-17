@@ -55,3 +55,6 @@ Make sure to have Registered on the Gnowsys Website that you are trying to login
 
 
 
+the main python component is in the folder  gnowmoz@gnowledge.org/components/gnowmoz.py
+
+the main JS component is in the folder gnowmoz@gnowledge.org/chrome/gnowmoz/content/js/gnowmoz.js
